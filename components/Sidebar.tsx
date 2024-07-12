@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Footer from './Footer';
 
 const Sidebar = ({user}:SiderbarProps) => {
     const pathname = usePathname();  
@@ -18,7 +19,7 @@ const Sidebar = ({user}:SiderbarProps) => {
             alt="Horizon logo"
             className='size-[24px] max-xl:size-14'
             />
-            <h1 className='sidebar-logo'>Hoirzon</h1>
+            <h1 className='sidebar-logo'>Horizon</h1>
             </Link>
 
             {/*taken from constants folder index.ts */}
@@ -49,7 +50,7 @@ const Sidebar = ({user}:SiderbarProps) => {
             })}
             USER 
         </nav>
-        FOOTER
+            <Footer user={user}/>
     </section>
   )
 }

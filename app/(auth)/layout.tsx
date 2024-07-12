@@ -16,15 +16,25 @@ Inside <main>, there is static content (SIDEBAR) and the dynamic content represe
 {children}: This is a special prop in React that represents whatever elements are nested inside the RootLayout 
             component when it's used elsewhere in the application.
 */
-
+import Image from "next/image";
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <main>
+    <main className="flex min-h-screen w-full justify-between font-inter">
         {children}
+        <div className="auth-asset">
+          <div>
+            <Image 
+            src='/icons/auth-image.svg'
+            alt='Auth Image'
+            width={500}
+            height={500}
+            />
+          </div>
+        </div>
     </main>
   );
 }
